@@ -13,11 +13,15 @@ $bike = new Bicycle('red', 1);
 $skateboard = new Skateboard('blue', 1);
 $car = new Car('blue', 4, 'fuel');
 
-$car->setHasParkBrake(false);
+var_dump($car);
+
 try {
     $car->start();
 } catch (Exception $e) {
-    echo $e->getMessage();
+    $car->setHasParkBrake(false);
+    echo 'The park brake is off, we can start the car' . PHP_EOL;
 } finally {
     echo 'Ma voiture roule comme un donut' . PHP_EOL;
 }
+
+var_dump($car);
