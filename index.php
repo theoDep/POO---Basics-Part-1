@@ -14,14 +14,12 @@ $skateboard = new Skateboard('blue', 1);
 $car = new Car('blue', 4, 'fuel');
 
 var_dump($car);
+var_dump($bike);
 
-try {
-    $car->start();
-} catch (Exception $e) {
-    $car->setHasParkBrake(false);
-    echo 'The park brake is off, we can start the car' . PHP_EOL;
-} finally {
-    echo 'Ma voiture roule comme un donut' . PHP_EOL;
-}
+echo $car->switchOn() ? 'Lights ON' : 'Lights OFF';
 
-var_dump($car);
+echo $bike->switchOn() ? 'Lights ON' : 'Lights OFF';
+
+$bike->forward();
+
+echo $bike->switchOn() ? 'Lights ON' : 'Lights OFF';
